@@ -12,6 +12,7 @@ import processing.core.PFont;
 public class Kaffeehaus extends PApplet
 {    
     int s=40;
+    int[] abstaende = {10, 20, 30, 20, 10, 20, 30, 20, 10, 20};
     /**
      * settings() Methode 
      * Fenstergröße size(int width, int height) und smooth(int level) muss hier eingestellt werden.
@@ -59,7 +60,7 @@ public class Kaffeehaus extends PApplet
     public void zeichneallequadrate(){ 
         for(int k=0; k<10; k++){
             for (int i=0; i<8; i++){
-                square(10+i*s*2, 0+k*s, s);
+                square(10+i*s*2+ abstaende[k], 0+k*s, s);
             }
         }
     }
