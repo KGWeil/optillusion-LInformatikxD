@@ -2,9 +2,8 @@
 import processing.core.PApplet;
 import processing.core.PFont;
 
-
-public class Wellen2 extends PApplet
-{   int green=0xff1caf37;
+public class uebungen3 extends PApplet
+{   int black=0;
     int white=255;
     /**
      * settings() Methode 
@@ -13,7 +12,7 @@ public class Wellen2 extends PApplet
     @Override
     public void settings()
     {
-        size(700, 700);
+        size(1000,1000);
     }        
 
     /**
@@ -27,8 +26,8 @@ public class Wellen2 extends PApplet
         background(255);
         strokeWeight(0);
         zeichneQuadrate(10, 10, 0, true);
-        innereQuadrate(10,10,white,true);
-        
+        // innereQuadrate(10,10,white,true);
+
     }
 
     /**
@@ -41,11 +40,11 @@ public class Wellen2 extends PApplet
      */
     public void zeichneQuadrate(int x, int y, int farbe, boolean links)
     {
-        fill(28,175,56);
-        for (int j=0; j<11; j++){
-            for (int i=0; i<11; i++){
-                square(0+i*100, 0+j*100, 50);
-                square(50+i*100, 50+j*100, 50);
+        fill(black);
+        for (int j=0; j<12; j++){
+            for (int i=0; i<12; i++){
+                square(20+i*80, 20+j*80, 40);
+                square(60+i*80, 60+j*80, 40);
             }
         }
     }
@@ -73,14 +72,14 @@ public class Wellen2 extends PApplet
         }
     }
 
-    public int farbwechsel(int farbe)
+      public int farbwechsel(int farbe)
     { 
         if (farbe==white) {
-            return green;
+            return black;
 
         } else{
             return white;
-        
+
         }
 
     }
@@ -90,7 +89,7 @@ public class Wellen2 extends PApplet
      *
      */    
     public static void main(String _args[]){ 
-        PApplet.main(new String[] {Wellen2.class.getName() });
+        PApplet.main(new String[] {uebungen3.class.getName() });
     }
 
 }
