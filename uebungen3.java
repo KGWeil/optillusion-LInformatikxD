@@ -27,7 +27,6 @@ public class uebungen3 extends PApplet
         strokeWeight(0);
         zeichneQuadrate(10, 10, 0, true);
         innereQuadrate(10,10,white,true);
-        //iddle(10,10,0,true);
     }
 
     /**
@@ -58,7 +57,6 @@ public class uebungen3 extends PApplet
     public void innereQuadrate(int x, int y, int farbe, boolean links)
     {
         fill(white);
-
         for (int j=0; j<12; j++){
             for (int i=0; i<24; i++){
                 if(i<6||i>17||j<3||j>8){  //6-6 o l  17-17 u r
@@ -72,34 +70,27 @@ public class uebungen3 extends PApplet
                     farbe=farbwechsel(farbe);
                     fill(farbe);
                     square(45+i*40, 85+j*80, 10);//unten rechts jede 2.
+                    
                 } 
-                else
-                { 
+
+                else {
+                    square(25+i*40, 45+j*80, 10); //obere linke ecke jede 1. 
+                    farbe=farbwechsel(farbe);
+                    fill(farbe);
+                    square(25+i*40, 85+j*80, 10);//unter rechte ecke jede 1.
+                    farbe=farbwechsel(farbe);
+                    fill(farbe);
+                    square(45+i*40, 25+j*80, 10);//oben links jede 2.
+                    farbe=farbwechsel(farbe);
+                    fill(farbe);
+                    square(45+i*40, 65+j*80, 10);//unten rechts jede 2.
+
                 }
             }
         }
     }
 
-    public void middle(int x, int y, int farbe, boolean links)
-    {
-        fill(black);
-        for (int j=0; j<6; j++){
-            for (int i=0; i<6; i++){
-                square(260+i*80, 260+j*80, 40); 
-                // farbe=farbwechsel(farbe);
-                // fill(farbe);
-                // square(260+i*80, 300+j*80, 40);
-                // farbe=farbwechsel(farbe);
-                // fill(farbe);
-                // square(45+i*40, 45+j*80, 10);
-                // farbe=farbwechsel(farbe);
-                // fill(farbe);
-                // square(45+i*40, 85+j*80, 10);
-            }
-        }
-    }
-
-    public int farbwechsel(int farbe)
+public int farbwechsel(int farbe)
     { 
         if (farbe==white) {
             return black;
